@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var originalAmount = 0.0
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Form {
+            Section("Original Amount") {
+                TextField("Input Amount", value: $originalAmount, format: .number)
+                    .keyboardType(.decimalPad)
+                
+            }
         }
-        .padding()
     }
 }
 
